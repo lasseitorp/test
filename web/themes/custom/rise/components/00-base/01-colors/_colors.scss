@@ -1,0 +1,9 @@
+@function clr($colorChoice) {
+  @return var(--c-#{$colorChoice});
+}
+
+.color-swatches {
+  max-width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+}

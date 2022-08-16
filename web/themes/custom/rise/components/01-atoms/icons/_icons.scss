@@ -1,0 +1,44 @@
+.icon {
+  fill: currentColor;
+  user-select: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1;
+
+  &--rotate {
+    animation: rotating 1s linear infinite;
+  }
+}
+
+// Storybook styling
+.styleguide-icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.styleguide-swatch {
+  .icon {
+    width: 28px;
+    height: auto;
+    fill: clr(text);
+  }
+}
+
+.styleguide-icon {
+  margin-right: $space-one-half;
+  margin-bottom: $space;
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,26 @@
+menu_items:
+  - title: 'Forskning'
+    url: '#'
+    modifiers:
+      - 'active'
+    below:
+      - title: 'This should not be seen'
+        url: '#'
+  - title: 'Omställning'
+    url: '#'
+    modifiers:
+  - title: 'Utbildning'
+    url: '#'
+    modifiers:
+  - title: 'Provning'
+    url: '#'
+    modifiers:
+  - title: 'Besiktning'
+    url: '#'
+    modifiers:
+  - title: 'Certifiering'
+    url: '#'
+    modifiers:
+  - title: 'Om oss'
+    url: '#'
+    modifiers:

@@ -1,0 +1,38 @@
+.footer-menu {
+  @include list-reset;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  &__item {
+    margin-bottom: $space-triple;
+  }
+
+  &__link {
+    @include link;
+
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.004em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--sub {
+    margin-top: $space;
+
+    .footer-menu__item {
+      margin-bottom: 0;
+    }
+
+    .footer-menu__link {
+      font-weight: 400;
+      text-transform: none;
+      font-size: 0.875rem;
+    }
+  }
+}

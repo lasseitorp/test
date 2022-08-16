@@ -1,0 +1,66 @@
+:root {
+  --header-height: 96px;
+}
+
+.header {
+  height: var(--header-height);
+  background-color: clr(default);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+  @include transition(border-bottom-color);
+
+  &__inner {
+    @include wrapper;
+
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+  }
+
+  &__branding {
+    @extend .logo;
+
+    padding: $space-one-half;
+    margin: -$space-one-half 0;
+
+    .icon {
+      width: 37px;
+      height: 48px;
+    }
+
+    &:focus-visible {
+      @include focus-visible;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: row-reverse;
+
+    > * {
+      margin-right: $space;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+
+    @include large {
+      margin-right: 0;
+      flex-direction: row;
+
+      > * {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .scrolled & {
+    border-bottom-color: clr(gray-1);
+  }
+}

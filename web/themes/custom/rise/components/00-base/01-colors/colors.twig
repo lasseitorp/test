@@ -1,0 +1,40 @@
+<div class="styleguide">
+	<header class="styleguide__header">
+		<h2>
+			{{ title }}
+		</h2>
+		{% if description %}
+			{{ description }}
+		{% endif %}
+
+	</header>
+	{% for group in groups %}
+		<section class="styleguide-section">
+			<div class="styleguide-section__item styleguide-section__item--first">
+				<div class="styleguide-section__title">
+					{{ group.title }}
+				</div>
+			</div>
+			<div class="styleguide-section__item styleguide-section__item--second">
+				<div class="color-swatches">
+					{% for item in group.items %}
+						<div class="styleguide-swatch">
+							<div class="styleguide-swatch__square" style="background-color: {{ item.hex }}; border-color: {{ item.border }};"></div>
+							<span class="styleguide-swatch__title">
+								{{ item.title }}
+							</span>
+							<span>
+								Hex:
+								{{ item.hex }}
+							</span>
+							<span>
+								Rgb:
+								{{ item.rgb }}
+							</span>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% endfor %}
+</div>

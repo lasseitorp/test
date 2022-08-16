@@ -1,0 +1,11 @@
+tips:
+  place-block:
+    label: 'Placera block'
+    body: 'Alla anpassade eller kontribuerade block kan läggas till i en viss region genom att klicka på knappen Placera block. Ett nytt block kan även skapas genom att klicka på Placera block'
+  block-region:
+    label: Blockregion
+  configure-block:
+    label: 'Konfigurera block'
+  custom-block-library:
+    label: 'Anpassat blockbibliotek'
+    body: 'Blockhanteringssidan har också en annan flik som används för att lägga till anpassade block. Namnet på fliken är "Anpassat blockbibliotek". Den fliken ger en möjlighet att lägga till anpassade block.'

@@ -1,0 +1,118 @@
+/* A */
+.main-menu-icon-link {
+  @extend .main-menu__link;
+
+  text-align: center;
+  color: clr(text);
+  padding: 0;
+
+  &__inner {
+    @extend .main-menu__link-inner;
+
+    display: block;
+    @include large {
+      display: inline-flex;
+    }
+  }
+
+  &__text {
+    @extend .toggle-expand__text;
+    @include large {
+      font-size: 1rem;
+    }
+  }
+
+  &__wrapper {
+    @extend .toggle-expand__icon-wrapper;
+    @include large {
+      height: 1.6rem;
+      width: auto;
+    }
+  }
+
+  &__icon {
+    @extend .toggle-expand__icon;
+
+    width: 2.25rem;
+    height: 2.25rem;
+    @include large {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-right: 0.25rem;
+    }
+  }
+
+  @include large {
+    padding: $space-one-half;
+  }
+
+  // text-decoration: none;
+  // color: clr(text);
+
+  // &-inner {
+  //   display: block;
+  //   height: 2.8rem;
+  //   white-space: nowrap;
+  //   text-align: center;
+  //   @include transition(color);
+  // }
+
+  // &-text {
+  //   display: block;
+  //   font-size: 0.85rem;
+  //   font-family: $font-heading;
+  //   font-weight: 700;
+  //   line-height: 1;
+  //   margin-top: -$space-one-half;
+  // }
+
+  // &:hover {
+  //   color: clr(gray-3);
+  // }
+
+  // &:focus-visible {
+  //   @include focus-visible;
+  // }
+
+  // &--active {
+  //   pointer-events: none;
+  //   color: clr(gray-3);
+  //   &:focus-visible {
+  //     outline: 0;
+  //     background-color: transparent;
+  //   }
+  //   .main-menu__icon-link-inner {
+  //     border-bottom-color: clr(gray-3) !important;
+  //   }
+  // }
+
+  // @include large {
+  //   font-size: 1rem;
+  //   padding: $space-one-half;
+
+  //   &-inner {
+  //     display: inline-flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     height: 1.6rem;
+  //     border-width: 2px;
+  //   }
+
+  //   &:focus-visible {
+  //     .main-menu__icon-link-inner {
+  //       border-bottom-color: clr(text);
+  //     }
+  //   }
+
+  //   &-text {
+  //     margin: 0;
+  //     font-size: 1rem;
+  //     text-align: left;
+  //   }
+
+  //   .icon {
+  //     height: 1.4rem;
+  //     width: 1.4rem;
+  //   }
+  // }
+}

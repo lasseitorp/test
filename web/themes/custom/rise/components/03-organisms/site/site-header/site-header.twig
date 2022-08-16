@@ -1,0 +1,25 @@
+{{ attach_library('rise/site-header') }}
+{% set header__base_class = 'header' %}
+
+<header {{ bem(header__base_class) }}>
+	<div {{ bem('inner', [], header__base_class) }}>
+		{% include "@atoms/logo/_logo.twig" with {
+			logo__base_class: header__base_class ~ '__branding'
+		}%}
+		<div {{ bem('navigation', [], header__base_class) }}>
+			{% block header__menu %}
+				{% include "@molecules/menus/main-menu/main-menu.twig" %}
+				{% include "@molecules/menus/main-menu/_main-menu-icon-link.twig" with {
+					link_title: 'Sök'|t,
+					link_url: '#',
+					link_icon: 'search'
+				} %}
+				{% include "@molecules/menus/main-menu/_main-menu-icon-link.twig" with {
+					link_title: 'English',
+					link_url: '#',
+					link_icon: 'language'
+				} %}
+			{% endblock %}
+		</div>
+	</div>
+</header>

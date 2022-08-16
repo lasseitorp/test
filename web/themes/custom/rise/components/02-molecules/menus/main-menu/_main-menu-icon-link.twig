@@ -1,0 +1,20 @@
+{% set main_menu_icon_link__base_class = main_menu_icon_link__base_class|default('main-menu-icon-link') %}
+{% set link_base_class = main_menu_icon_link__base_class %}
+{% if not main_menu_link__modifiers %}
+	{% set main_menu_link__modifiers = [] %}
+{% endif %}
+
+{% extends "@atoms/links/link/link.twig" %}
+{% block link_content %}
+	<span {{ bem('inner', [], main_menu_icon_link__base_class) }}>
+		<span {{ bem('wrapper', [], main_menu_icon_link__base_class) }}>
+			{% include "@atoms/icons/_icon.twig" with {
+				icon_name: link_icon,
+				icon_base_class: "icon",
+        icon_blockname: main_menu_icon_link__base_class} %}
+		</span>
+		<span {{ bem('text', [], main_menu_icon_link__base_class) }}>
+			{{link_title }}
+		</span>
+	</span>
+</span>{% endblock %}

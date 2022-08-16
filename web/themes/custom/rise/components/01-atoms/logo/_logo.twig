@@ -1,0 +1,12 @@
+{% set logo__base_class = logo__base_class|default('logo') %}
+{% set link_base_class = logo__base_class %}
+{% set link_url = logo_link__url|default('/') %}
+{% set link_attributes = {'aria-label': 'ri.se homepage', 'title' : 'Home'} %}
+
+{% extends "@atoms/links/link/link.twig" %}
+{% block link_content %}
+	{% include "@atoms/icons/_icon.twig" with {
+			icon_name: 'logo',
+			}
+		%}
+{% endblock %}

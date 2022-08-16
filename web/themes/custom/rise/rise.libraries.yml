@@ -1,0 +1,11 @@
+global:
+  css:
+    theme:
+      dist/css/style.css: {}
+
+main-menu:
+  js:
+    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
+  dependencies:
+    - core/drupal
+    - core/js

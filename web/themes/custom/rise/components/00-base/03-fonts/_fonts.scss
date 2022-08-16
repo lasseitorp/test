@@ -1,0 +1,18 @@
+.typography {
+  font-size: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+
+  + .typography {
+    margin-top: $space;
+  }
+
+  &__variant {
+    word-break: break-all;
+
+    @include xl {
+      span {
+        display: block;
+      }
+    }
+  }
+}

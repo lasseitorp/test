@@ -1,0 +1,150 @@
+title: Iconography
+description: <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+icons:
+  - title: Add
+    name: add
+    class:
+      - default
+  - title: Arrow Back
+    name: arrow-back
+    class:
+      - default
+  - title: Arrow Forward
+    name: arrow-forward
+    class:
+      - default
+  - title: Cancel
+    name: cancel
+    class:
+      - default
+  - title: Calendar Today
+    name: calendar-today
+    class:
+      - default
+  - title: Chevron Left
+    name: chevron-left
+    class:
+      - default
+  - title: Chevron Right
+    name: chevron-right
+    class:
+      - default
+  - title: Chevron Up
+    name: chevron-up
+    class:
+      - default
+  - title: Chevron Down
+    name: chevron-down
+    class:
+      - default
+  - title: Menu
+    name: menu
+    class:
+      - default
+  - title: Close
+    name: close
+    class:
+      - default
+  - title: Create
+    name: create
+    class:
+      - default
+  - title: Data Range
+    name: data-range
+    class:
+      - default
+  - title: Delete
+    name: delete
+    class:
+      - default
+  - title: Done
+    name: done
+    class:
+      - default
+  - title: Email
+    name: email
+    class:
+      - default
+  - title: Error
+    name: error
+    class:
+      - default
+  - title: Event Available
+    name: event-available
+    class:
+      - default
+  - title: Event Busy
+    name: event-busy
+    class:
+      - default
+  - title: Event Note
+    name: event-note
+    class:
+      - default
+  - title: Favorite
+    name: favorite
+    class:
+      - default
+  - title: Home
+    name: home
+    class:
+      - default
+  - title: Language
+    name: language
+  - title: Loading
+    name: loading
+    class:
+      - default
+      - rotate
+  - title: Restart All
+    name: restart-all
+    class:
+      - default
+  - title: Person
+    name: person
+    class:
+      - default
+  - title: Search
+    name: search
+    class:
+      - default
+  - title: More Horizontal
+    name: more-horizontal
+    class:
+      - default
+  - title: More Vertical
+    name: more-vertical
+    class:
+      - default
+  - title: Visibility On
+    name: visibility-on
+    class:
+      - default
+  - title: Visibility Off
+    name: visibility-off
+    class:
+      - default
+  - title: Warning
+    name: warning
+    class:
+      - default
+  - title: Facebook
+    name: facebook
+    class:
+      - default
+  - title: Instagram
+    name: instagram
+    class:
+      - default
+  - title: LinkedIn
+    name: linkedin
+    class:
+      - default
+  - title: Twitter
+    name: twitter
+    class:
+      - default
+  - title: YouTube
+    name: youtube
+    class:
+      - default

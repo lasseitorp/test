@@ -1,0 +1,5 @@
+output_image_tag: true
+image_srcset: '16_9_mock_320_180.jpg 320w, 16_9_mock_480_270.jpg 480w, 16_9_mock_640_360.jpg 640w, 16_9_mock_800_450.jpg 800w, 16_9_mock_960_540.jpg 960w, 16_9_mock_1120_630.jpg 1120w, 16_9_mock_1280_720.jpg 1280w, 16_9_mock_1440_810.jpg 1440w, 16_9_mock_1600_900.jpg 1600w, 16_9_mock_1760_990.jpg 1760w, 16_9_mock_1920_1080.jpg 1920w, 16_9_mock_2080_1170.jpg 2080w, 16_9_mock_2240_1260.jpg 2240w'
+image_sizes: '100vw'
+image_src: '16_9_mock_320_180.jpg'
+image_alt: 'A 16 by 9 image'

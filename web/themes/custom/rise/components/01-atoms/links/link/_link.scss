@@ -1,0 +1,35 @@
+@mixin link {
+  color: clr(text);
+  text-underline-offset: 5px;
+  @include transition;
+
+  &:hover {
+    color: clr(gray-4);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    @include focus-visible;
+  }
+}
+
+.link {
+  @include link;
+
+  &--alt {
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--inline-block {
+    display: inline-block;
+  }
+
+  &--block {
+    display: block;
+  }
+}

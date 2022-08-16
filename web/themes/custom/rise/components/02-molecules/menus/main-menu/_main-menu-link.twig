@@ -1,0 +1,13 @@
+{% set main_menu_link__base_class = main_menu_link__base_class|default('main-menu__link') %}
+{% if not main_menu_link__modifiers %}
+	{% set main_menu_link__modifiers = [] %}
+{% endif %}
+
+{% extends "@atoms/links/link/link.twig" %}
+{% block link_content %}
+	<span class="{{ main_menu_link__base_class ~ '-inner' }}">
+		<span class="{{ main_menu_link__base_class ~ '-text' }}">
+			{{link_title }}
+		</span>
+	</span>
+{% endblock %}

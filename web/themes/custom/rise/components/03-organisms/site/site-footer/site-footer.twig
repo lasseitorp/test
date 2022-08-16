@@ -1,0 +1,22 @@
+{% set footer__base_class = 'footer' %}
+
+<footer {{ bem(footer__base_class) }}>
+	<div {{ bem('inner', [], footer__base_class) }}>
+		<div {{ bem('first', [], footer__base_class) }}>
+			{% block footer__first %}
+				{% include "@molecules/menus/footer-menu/footer-menu.twig" %}
+			{% endblock %}
+		</div>
+		<div {{ bem('second', [], footer__base_class) }}>
+			{% block footer__second %}
+				{% include "@atoms/links/link/link.twig" with {
+					link_title: 'Logga in på kundportalen',
+					link_url: '#',
+					link_modifiers: ['alt', 'inline-block']
+				} %}
+				{% include "@molecules/menus/social/social-menu.twig" %}
+			{% endblock %}
+		</div>
+
+	</div>
+</footer>

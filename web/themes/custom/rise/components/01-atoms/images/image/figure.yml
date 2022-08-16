@@ -1,0 +1,5 @@
+output_image_tag: true
+image_url: '#'
+image_src: '16_9_mock_1920_1080.jpg'
+image_alt: 'This is the alt text'
+image_caption: 'This is an image caption.'

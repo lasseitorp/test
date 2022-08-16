@@ -1,0 +1,39 @@
+{#
+/**
+ * Available variables:
+ * - button_content - the content of the button (typically text)
+ *
+ * Available blocks:
+ * - button_content - used to replace the content of the button with something other than text
+ *   for example: to insert an icon
+ */
+#}
+{% set button_base_class = button_base_class|default('button') %}
+{% if not button_modifiers %}
+	{% set button_modifiers = [] %}
+{% endif %}
+
+{# {% if button_icon and button_icon != "none" %}
+	{% set button_modifiers = button_modifiers|merge([button_icon, button_icon__position, 'has-icon']) %}
+{% endif %} #}
+
+
+{% set additional_attributes = {
+  class: bem(button_base_class, button_modifiers, button_blockname),
+} %}
+
+<button {{ add_attributes(additional_attributes) }}>
+	{% if button_icon and button_icon != "none" and button_icon__position == 'startIcon' %}
+		<span {{ bem('icon', ['start'], button_base_class) }}>
+			{% include "@atoms/icons/_icon.twig" with { icon_name: button_icon, icon_modifiers: button_icon__modifiers } %}
+		</span>
+	{% endif %}
+	{% block button_content %}
+		{{ button_content }}
+	{% endblock %}
+	{% if button_icon and button_icon != "none" and button_icon__position == 'endIcon' %}
+		<span {{ bem('icon', ['end'], button_base_class) }}>
+			{% include "@atoms/icons/_icon.twig" with { icon_name: button_icon, icon_modifiers: button_icon__modifiers } %}
+		</span>
+	{% endif %}
+</button>

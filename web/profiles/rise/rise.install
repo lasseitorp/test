@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the standard installation profile.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function rise_install() {
+  // Assign user 1 the "administrator" role.
+  /** @var \Drupal\user\Entity\User $user */
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('uuid', '07a3eb1d-dd58-47f7-a9a2-a40199c5c1f1')
+    ->save(TRUE);
+
+}

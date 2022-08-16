@@ -1,0 +1,22 @@
+uuid: 0c1c09a7-5065-4446-9b8d-4f76ce2a278c
+langcode: sv
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.promote
+field_name: promote
+entity_type: node
+bundle: page
+label: 'Visas på startsidan'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: På
+  off_label: Av
+field_type: boolean

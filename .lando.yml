@@ -1,0 +1,111 @@
+name: rise
+recipe: drupal9
+config:
+  via: apache
+  database: mysql
+  webroot: web
+  php: "8.0"
+services:
+  appserver:
+    xdebug: debug
+    php: .vscode/php.ini
+    composer_version: 2
+    overrides:
+      environment:
+        ENV: "dev"
+    build:
+      - cd /app && /usr/local/bin/composer install
+      - chmod 755 /app/web/sites/default
+      - test -f /app/web/sites/default/settings.local.php && chmod 755 /app/web/sites/default/settings.local.php
+      - echo "Appserver - Copying dev.settings.local.php to settings.local.php"
+      - cp /app/.settings/dev.settings.local.php /app/web/sites/default/settings.local.php
+    build_as_root:
+      - pecl -q install pcov
+      - docker-php-ext-enable pcov
+      - test ! -f /tmp/xdebug.log && touch /tmp/xdebug.log
+      - chmod 666 /tmp/xdebug.log
+      - apt-get -qq update > /dev/null
+      - echo "Appserver - installing gettext..." && apt-get -qq install gettext -y > /dev/null && echo "Done." || echo "Failed."
+    run_as_root:
+      # Allow ImageMagick to run on PDF files.
+      - sed -i '/\"PDF\"/d' /etc/ImageMagick-6/policy.xml && echo "Appserver - Removed PDF blocking from ImageMagick policy."
+  node:
+    type: node:custom
+    ssl: true
+    scanner: false
+    build:
+      - echo "Node - Installing dependencies" && cd /app && yarn install
+      - echo "Node - Installing theme" && cd /app/web/themes/custom/rise && yarn install
+    overrides:
+      image: node:16
+      ports:
+        - "9230:9230"
+events:
+  post-start:
+    # run composer install when box starts
+    - appserver: cd /app && composer install
+  post-db-import:
+    - appserver: |
+        echo "Appserver - Performing deploy hooks" &&
+        /app/vendor/bin/drush deploy &&
+        echo "Appserver - Resetting admin pass to 'admin'" &&
+        /app/vendor/bin/drush upwd admin admin
+tooling:
+  drupal-check:
+    service: appserver
+    description: Run drupal-check locally
+    cmd:
+      - appserver: cd /app && /app/vendor/bin/drupal-check -ad web/modules/custom web/themes/custom
+  drupal:
+    service: appserver
+    cmd: drupal --root=/app/web
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush
+  drush-xdebug:
+    service: appserver
+    cmd: /app/vendor/bin/drush
+    env:
+      XDEBUG_TRIGGER: 1
+  composer:
+    service: appserver
+    cmd: cd /app && exec /usr/local/bin/composer $0 $*
+  yarn:
+    service: node
+    description: Run yarn
+    cmd: cd /app && exec yarn $0 $*
+  gulp:
+    service: node
+    description: Run gulp (backend)
+    cmd: cd /app && exec /app/node_modules/gulp/bin/gulp.js $0 $*
+  install:
+    description: Install clean site
+    cmd:
+      - appserver: /app/vendor/bin/drush si rise -y --account-pass=admin
+      - appserver: /app/vendor/bin/drush cr
+      - appserver: /app/vendor/bin/drush cim -y
+      - appserver: /app/vendor/bin/drush cr
+      - appserver: /app/vendor/bin/drush deploy:hook -y
+      - appserver: /app/vendor/bin/drush locale-check && /app/vendor/bin/drush locale-update
+      # 1. locale-update replaces some customized strings.
+      # 2. Some modules override configuration.
+      # Therefore - run another config-import.
+      - appserver: /app/vendor/bin/drush cim -y
+      - appserver: chmod 755 /app/web/sites/default
+      - node: cd /app/web/themes/custom/rise && yarn build
+  develop:
+    service: node
+    description: start development
+    cmd: cd /app/web/themes/custom/rise && yarn develop
+  build:
+    service: node
+    description: start build
+    cmd: cd /app/web/themes/custom/rise && yarn build
+  phpcs:
+    service: appserver
+    cmd: "cd /app && vendor/bin/phpcs -n --standard=Drupal,DrupalPractice --colors --extensions=inc,info,install,module,php,profile,test,theme web/modules/custom web/profiles web/themes/custom"
+    description: Check code standards.
+  phpcbf:
+    service: appserver
+    cmd: "cd /app && vendor/bin/phpcbf --standard=Drupal,DrupalPractice --colors --extensions=inc,info,install,module,php,profile,test,theme web/modules/custom web/profiles web/themes/custom"
+    description: Fix code standard violations automatically.

@@ -1,0 +1,55 @@
+/* Toggle */
+.toggle-expand {
+  @include link;
+
+  text-align: center;
+  display: inline-block;
+  padding: 0;
+  text-decoration: none;
+
+  @include large {
+    display: none;
+  }
+
+  &:focus-visible {
+    @include focus-visible;
+  }
+
+  &__text {
+    display: block;
+    font-size: 0.85rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__icon-wrapper {
+    height: 2.75rem;
+    width: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.toggle-expand__icon {
+  height: 100%;
+  width: 100%;
+  fill: currentColor;
+}
+
+.toggle-expand__open {
+  display: inline-block;
+
+  .toggle-expand--open & {
+    display: none;
+  }
+}
+
+.toggle-expand__close {
+  display: none;
+
+  .toggle-expand--open & {
+    display: inline-block;
+  }
+}

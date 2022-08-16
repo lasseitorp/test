@@ -1,0 +1,25 @@
+uuid: 0965912c-d3b8-4443-b415-a7c07db97f1a
+langcode: sv
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - rise
+id: huvudmeny
+theme: rise
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: Huvudmeny
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

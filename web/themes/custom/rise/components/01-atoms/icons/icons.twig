@@ -1,0 +1,32 @@
+<div class="styleguide">
+	<header class="styleguide__header">
+		<h2>
+			{{ title }}
+		</h2>
+		{% if description %}
+			{{ description }}
+		{% endif %}
+	</header>
+
+	<div class="styleguide-icons">
+		{% for icon in icons %}
+			<div class="styleguide-swatch styleguide-icon">
+				<div class="styleguide-swatch__square">
+					<div class="styleguide-swatch__children">
+						{% include "@atoms/icons/_icon.twig" with {
+						icon_name: icon.name,
+						icon_modifiers: icon.class
+					} %}
+					</div>
+				</div>
+				<span class="styleguide-swatch__title">
+					{{ icon.title }}
+				</span>
+				<span>
+
+					{{ '#' ~ icon.name }}
+				</span>
+			</div>
+
+		{% endfor %}
+	</div>

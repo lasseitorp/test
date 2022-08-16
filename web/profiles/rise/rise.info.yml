@@ -1,0 +1,49 @@
+name: Rise
+type: profile
+core_version_requirement: ^9
+description: "Install with commonly used features pre-configured."
+version: VERSION
+install:
+  - node
+  - history
+  - block
+  - block_content
+  - ckeditor
+  - config
+  - contextual
+  - contact
+  - menu_link_content
+  - datetime
+  - block_content
+  - editor
+  - help
+  - image
+  - media
+  - media_library
+  - menu_ui
+  - metatag
+  - options
+  - path
+  - page_cache
+  - path_alias
+  - dynamic_page_cache
+  - big_pipe
+  - taxonomy
+  - dblog
+  - search
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - tour
+  - automated_cron
+  - admin_toolbar
+  - layout_builder
+themes:
+  - claro
+  - gin
+"interface translation project": rise
+"interface translation server pattern": profiles/rise/translations/%language.po

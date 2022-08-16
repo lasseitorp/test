@@ -1,0 +1,5 @@
+link_url: 'https://github.com/emulsify-ds/emulsify-design-system'
+link_title: 'This is the default link text'
+link_modifiers:
+link_attributes:
+  'target': '_blank'

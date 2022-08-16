@@ -1,0 +1,34 @@
+.tabs__link,
+.tabs__link--local-tasks {
+  @include large {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: auto;
+    padding: 0.6em 1.7em;
+    border-bottom: 1px solid clr(border);
+    border-left: none;
+  }
+
+  font-size: 0.825rem;
+  font-weight: 600;
+  display: block;
+  padding: 1em 2.4em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: clr(gray-2-inverse);
+  border: 1px solid clr(border);
+  border-bottom: none;
+  background-color: clr(gray-6);
+
+  &:hover {
+    color: clr(text);
+    background-color: clr(gray-5);
+  }
+
+  &.is-active {
+    color: clr(text);
+    background-color: clr(background);
+  }
+}

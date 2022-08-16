@@ -1,0 +1,10 @@
+# Set linguist-generated=true to set default state of the file to collapsed in GitHub diff view
+config/**/* linguist-generated=true
+ApiClient/**/* linguist-generated=true
+
+# Set correct language for syntax highlighting in github
+*.module linguist-language=PHP
+*.install linguist-language=PHP
+*.profile linguist-language=PHP
+*.theme linguist-language=PHP
+*.inc linguist-language=PHP

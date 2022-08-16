@@ -1,0 +1,39 @@
+.footer {
+  background-color: clr(gray-2);
+  padding: $space-triple 0;
+
+  @include large {
+    padding-top: $space-sextuple;
+  }
+
+  &__inner {
+    @include wrapper;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include large {
+      flex-direction: row;
+    }
+  }
+
+  &__first {
+    @include large {
+      flex: 1 1 80%;
+    }
+  }
+
+  &__second {
+    > * {
+      margin-bottom: $space;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include large {
+      flex: 0 1 20%;
+    }
+  }
+}

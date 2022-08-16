@@ -1,0 +1,81 @@
+.styleguide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.styleguide__header {
+  margin-bottom: 4rem;
+}
+
+.styleguide__header h2,
+.styleguide p {
+  margin: 0;
+}
+
+.styleguide p,
+.styleguide-section__item--second .styleguide-section__title {
+  color: #555;
+}
+
+.styleguide-section {
+  display: block;
+  margin: 2rem 0 4rem;
+}
+
+.styleguide-section__item {
+  flex-basis: 50%;
+}
+
+.styleguide-section__item--first {
+  padding-right: 10%;
+  margin-bottom: 1rem;
+}
+
+.styleguide-section__title {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 720px) {
+  .styleguide-section {
+    display: flex;
+  }
+}
+
+.styleguide-swatch {
+  padding-bottom: 24px;
+  width: 150px;
+  height: min-content;
+  vertical-align: top;
+}
+
+.styleguide-swatch__square {
+  margin-bottom: 8px;
+  width: 150px;
+  height: 150px;
+  background: var(--c-gray-1);
+  border: 1px solid var(--c-gray-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.styleguide-swatch__title {
+  color: var(--c-text) !important;
+  font-size: 1rem !important;
+}
+
+.styleguide-swatch > span {
+  display: block;
+  color: var(--c-gray-4);
+  font-size: 0.825rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .styleguide p,
+  .styleguide-section__item--second .styleguide-section__title {
+    color: #828282;
+  }
+  .styleguide-swatch > span {
+    color: var(--c-gray-3);
+  }
+}

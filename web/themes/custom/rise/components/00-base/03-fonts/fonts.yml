@@ -1,0 +1,36 @@
+title: Fonts
+description: <p>Web fonts used on ri.se</p>
+fonts:
+  - title: Code Pro Bold
+    description: '<p>Code Pro Bold is a powerful but kind font that gives our content character. It is used for larger headings and intermediate headings.</p>'
+    font_family: 'Code Pro'
+    variants:
+      - variant: 'Bold'
+        style: 'normal'
+        weight: 700
+  - title: Lato
+    description: '<p>Lato is used for all longer running texts. We mainly use the weights regular och bold and the italicized versions of these.</p>'
+    font_family: 'Lato'
+    variants:
+      - variant: 'Regular'
+        style: 'normal'
+        weight: 400
+      - variant: 'Regular Italic'
+        style: 'italic'
+        weight: 400
+      - variant: 'Bold'
+        style: 'normal'
+        weight: 700
+      - variant: 'Bold Italic'
+        style: 'italic'
+        weight: 700
+  - title: Roboto Mono
+    description: '<p>Roboto mono is a monospaced font. It is mainly used for short factual texts. We only use the weights regular and bold.</p>'
+    font_family: 'Roboto Mono'
+    variants:
+      - variant: 'Regular'
+        style: 'normal'
+        weight: 400
+      - variant: 'Bold'
+        style: 'normal'
+        weight: 700

@@ -1,0 +1,46 @@
+<div class="styleguide">
+	<header class="styleguide__header">
+		<h2>
+			{{ title }}
+		</h2>
+		{% if description %}
+			{{ description }}
+		{% endif %}
+	</header>
+	<div>
+		{% for font in fonts %}
+			<section class="styleguide-section">
+				<div class="styleguide-section__item styleguide-section__item--first">
+					<div class="styleguide-section__title">
+						{{ font.title }}
+					</div>
+					{% if font.description %}
+						<div class="styleguide-section__description">
+							{{ font.description }}
+						</div>
+					</div>
+					<div class="styleguide-section__item styleguide-section__item--second">
+						{% for variant in font.variants %}
+							<div class="typography">
+								<div class="styleguide-section__title">
+									{{ variant.variant }}
+								</div>
+								<div class="typography__variant" style="font-family: {{ font.font_family }}; font-style: {{ variant.style }}; font-weight: {{ variant.weight }};">
+									<span>
+										ABCDEFGHIJKLMNOPQRXTUVWXYZÅÄÖ
+									</span>
+									<span>
+										abcdefghijklmnopqrstuvwxyzåäö
+									</span>
+									<span>
+										1234567890
+									</span>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</section>
+		{% endfor %}
+	</div>
+</div>
